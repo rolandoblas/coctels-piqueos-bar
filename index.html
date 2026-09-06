@@ -448,16 +448,47 @@
       spark:'<path d="M12 3v5M12 16v5M4 12h5M15 12h5M6.5 6.5l3 3M14.5 14.5l3 3M17.5 6.5l-3 3M9.5 14.5l-3 3"/>'
     };
 
+    /* ==================================================================
+       CARTA — AQUÍ SE CAMBIAN PRECIOS, NOMBRES Y PLATOS
+       ------------------------------------------------------------------
+       Cada plato es una línea:   ["Nombre del plato", precio],
+       Con descripción:           ["Nombre", precio, "descripción"],
+
+       · El precio es el número (soles), SIN comillas:  ["Ala", 14]  ->  ["Ala", 15]
+       · No borres las comillas " ", las comas , ni los corchetes [ ]
+       · Para quitar un plato: borra su línea completa
+       · Para agregar un plato: copia una línea y cámbiala
+       Guarda, haz commit y la web se actualiza sola.
+       ================================================================== */
     var MENU = [
       { id:"alitas", name:"Alitas", accent:"Gourmet", group:"comer", icon:"wing",
         note:"Todas con papa amarilla crocante, salpimentada y finas hierbas · porción de 6 unidades.",
-        items:[["Alitas BBQ",25],["Alitas BBQ Picantes",26],["Alitas Crocantes",25],["Alitas Hot Wings",26],["Alitas Búfalo",25],["Alitas Maracuyá",25],["Alitas Acevichadas",26],["Alitas Criollas",25],["Alitas Honey Mustard",26],["Alitas Teriyaki",25]] },
+        items:[
+          ["Alitas BBQ", 25],
+          ["Alitas BBQ Picantes", 26],
+          ["Alitas Crocantes", 25],
+          ["Alitas Hot Wings", 26],
+          ["Alitas Búfalo", 25],
+          ["Alitas Maracuyá", 25],
+          ["Alitas Acevichadas", 26],
+          ["Alitas Criollas", 25],
+          ["Alitas Honey Mustard", 26],
+          ["Alitas Teriyaki", 25]
+        ] },
       { id:"piqueos", name:"Nuestros", accent:"Piqueos", group:"comer", icon:"stick",
         note:"Acompañados con guacamole o salsa de ajo.",
-        items:[["Tequeños de queso · 10 und",20],["Tequeños de lomo saltado · 10 und",25]] },
+        items:[
+          ["Tequeños de queso · 10 und", 20],
+          ["Tequeños de lomo saltado · 10 und", 25]
+        ] },
       { id:"broaster", name:"Broaster", accent:"Crocante", group:"comer", icon:"drumstick",
         note:"Con papa amarilla crocante, salpimentada y finas hierbas.",
-        items:[["Ala",14],["Encuentro",17],["Pierna",16],["Pecho",18]] },
+        items:[
+          ["Ala", 14],
+          ["Encuentro", 17],
+          ["Pierna", 16],
+          ["Pecho", 18]
+        ] },
       { id:"salchipapas", name:"Salchichas", accent:"c/ papas", group:"comer", icon:"fries",
         note:"Base de papa amarilla crocante salpimentada, finas hierbas y hot dog ahumado.",
         items:[
@@ -500,17 +531,66 @@
           ["Coctel's",30,"Doble carne, jamón, queso cheddar, huevo, chorizo, tocino y aros de cebolla al panko."]
         ] },
       { id:"adicionales", name:"Adicionales", accent:"& extras", group:"comer", icon:"fries",
-        items:[["Arroz",5],["Jamón",2],["Queso",2],["Huevo",2],["Tocino",2],["Chorizo",3],["Ensalada fresca",6],["Papa amarilla",8],["Plátano",3]] },
+        items:[
+          ["Arroz", 5],
+          ["Jamón", 2],
+          ["Queso", 2],
+          ["Huevo", 2],
+          ["Tocino", 2],
+          ["Chorizo", 3],
+          ["Ensalada fresca", 6],
+          ["Papa amarilla", 8],
+          ["Plátano", 3]
+        ] },
       { id:"bebidas", name:"Bebidas", accent:"frías", group:"beber", icon:"cup",
         items:[
-          ["Jarra de limonada americana",15],["Jarra de limonada frozen",20],["Jarra de limonada de hierba buena",18],
-          ["Jarra de maracuyá",15],["Jarra de maracuyá frozen",20],["Copa de limonada",6],["Copa de maracuyá",6],
-          ["Copa de limonada de hierba buena",7],["Inca Kola 500 ml",5],["Coca Cola 500 ml",5],["Agua San Mateo",4]
+          ["Jarra de limonada americana", 15],
+          ["Jarra de limonada frozen", 20],
+          ["Jarra de limonada de hierba buena", 18],
+          ["Jarra de maracuyá", 15],
+          ["Jarra de maracuyá frozen", 20],
+          ["Copa de limonada", 6],
+          ["Copa de maracuyá", 6],
+          ["Copa de limonada de hierba buena", 7],
+          ["Inca Kola 500 ml", 5],
+          ["Coca Cola 500 ml", 5],
+          ["Agua San Mateo", 4]
         ] },
       { id:"premium", name:"Cócteles", accent:"Premium", group:"beber", icon:"martini",
-        items:[["Tequila Sunrise",18],["Margarita",20],["Blue Margarita",22],["Long Island Iced Tea",25],["Capitán",20],["Dry Martini",20],["Apple Martini",20],["Manhattan",22],["Laguna Azul",18],["Piscina",25],["Amor en Llamas",25],["Amaretto Sour",18],["Gin Tonic",20],["Gin con Gin",18],["Sex on the Beach",20],["Orgasmo",22],["Orgasmo Múltiple",25],["Caipirinha",20],["Tom Collins",18],["John Collins",20],["Negroni",28],["Aperol Spritz",30]] },
+        items:[
+          ["Tequila Sunrise", 18],
+          ["Margarita", 20],
+          ["Blue Margarita", 22],
+          ["Long Island Iced Tea", 25],
+          ["Capitán", 20],
+          ["Dry Martini", 20],
+          ["Apple Martini", 20],
+          ["Manhattan", 22],
+          ["Laguna Azul", 18],
+          ["Piscina", 25],
+          ["Amor en Llamas", 25],
+          ["Amaretto Sour", 18],
+          ["Gin Tonic", 20],
+          ["Gin con Gin", 18],
+          ["Sex on the Beach", 20],
+          ["Orgasmo", 22],
+          ["Orgasmo Múltiple", 25],
+          ["Caipirinha", 20],
+          ["Tom Collins", 18],
+          ["John Collins", 20],
+          ["Negroni", 28],
+          ["Aperol Spritz", 30]
+        ] },
       { id:"shots", name:"Shots", accent:"& tragos", group:"beber", icon:"shot",
-        items:[["Pisco",10],["Ron",10],["Tequila",12],["Gin",12],["Whisky",15],["Amaretto",10],["Jägermeister",12]] },
+        items:[
+          ["Pisco", 10],
+          ["Ron", 10],
+          ["Tequila", 12],
+          ["Gin", 12],
+          ["Whisky", 15],
+          ["Amaretto", 10],
+          ["Jägermeister", 12]
+        ] },
       { id:"alpaso", name:"Cócteles", accent:"al paso", group:"beber", icon:"martini", note:"Vaso medida de 6 oz.",
         items:[
           ["Chilcano",9,"Pisco, limón, angostura y ginger ale."],
@@ -521,16 +601,65 @@
           ["Pantera Rosa",9,"Pisco, leche, granadina y crema de coco."]
         ] },
       { id:"digestivos", name:"Cócteles", accent:"Digestivos", group:"beber", icon:"martini",
-        items:[["Algarrobina",18],["Piña Colada",18],["Pantera Rosa",18],["Esperma de Pitufo",20]] },
+        items:[
+          ["Algarrobina", 18],
+          ["Piña Colada", 18],
+          ["Pantera Rosa", 18],
+          ["Esperma de Pitufo", 20]
+        ] },
       { id:"macerados", name:"Chilcanos", accent:"Macerados", group:"beber", icon:"highball", note:"Chilcano de pisco macerado en casa.",
-        items:[["Aguaymanto",18],["Maracuyá",18],["Fresa",18],["Eucalipto",18],["Hierba Luisa",18],["Canela",18],["Kión",18],["Frutos Rojos",18]] },
+        items:[
+          ["Aguaymanto", 18],
+          ["Maracuyá", 18],
+          ["Fresa", 18],
+          ["Eucalipto", 18],
+          ["Hierba Luisa", 18],
+          ["Canela", 18],
+          ["Kión", 18],
+          ["Frutos Rojos", 18]
+        ] },
       { id:"clasicos", name:"Variados", accent:"Clásicos", group:"beber", icon:"martini",
-        items:[["Machu Picchu",14],["Toma y Muere",20],["Cuba Libre",18],["Mojito Clásico",17],["Mojito de Maracuyá",18],["Mojito de Fresa",18],["Pisco Sunrise",18],["Garibaldi",20],["Cosmopolitan",20],["Pisco Sour",18],["Maracuyá Sour",18],["Chilcano Clásico",18],["Chilcano de Maracuyá",18],["Daiquiri de Fresa",18],["Daiquiri de Limón",18],["Daiquiri de Durazno",18],["Daiquiri de Maracuyá",18]] },
+        items:[
+          ["Machu Picchu", 14],
+          ["Toma y Muere", 20],
+          ["Cuba Libre", 18],
+          ["Mojito Clásico", 17],
+          ["Mojito de Maracuyá", 18],
+          ["Mojito de Fresa", 18],
+          ["Pisco Sunrise", 18],
+          ["Garibaldi", 20],
+          ["Cosmopolitan", 20],
+          ["Pisco Sour", 18],
+          ["Maracuyá Sour", 18],
+          ["Chilcano Clásico", 18],
+          ["Chilcano de Maracuyá", 18],
+          ["Daiquiri de Fresa", 18],
+          ["Daiquiri de Limón", 18],
+          ["Daiquiri de Durazno", 18],
+          ["Daiquiri de Maracuyá", 18]
+        ] },
       { id:"virgenes", name:"Tragos", accent:"vírgenes", group:"beber", icon:"highball", note:"Sin alcohol.",
-        items:[["Sunrise",12],["Frozen de Limón",10],["Frozen de Maracuyá",10],["Frozen de Fresa",12],["Pantera Tierna",12],["Piña Colada Virgen",15]] },
+        items:[
+          ["Sunrise", 12],
+          ["Frozen de Limón", 10],
+          ["Frozen de Maracuyá", 10],
+          ["Frozen de Fresa", 12],
+          ["Pantera Tierna", 12],
+          ["Piña Colada Virgen", 15]
+        ] },
       { id:"cervezas", name:"Chapa tu", accent:"chela", group:"beber", icon:"beer",
-        items:[["Pilsen 310 ml",10],["Cusqueña Trigo",12]] },
-      { id:"happyhour", name:"Happy", accent:"Hour", group:"beber", icon:"spark", type:"promo" }
+        items:[
+          ["Pilsen 310 ml", 10],
+          ["Cusqueña Trigo", 12]
+        ] },
+      { id:"happyhour", name:"Happy", accent:"Hour", group:"beber", icon:"spark", type:"promo",
+        promoTitle:"2 × 1",
+        promoWhen:"Lunes y martes · 6:00 – 9:00 p.m.",
+        promoSub:"En todos los tragos de promoción.",
+        promoItems:[
+          ["Aperol Spritz", "2 × S/ 40.00"],
+          ["Chilcano Macerado", "2 × S/ 30.00"]
+        ] }
     ];
 
     var CART_KEY = "coctels:pedido", FAV_KEY = "coctels:favoritos";
@@ -564,12 +693,11 @@
       if (sec.type === "promo") {
         html += '<section class="section promo" id="cat-'+sec.id+'" data-cat="'+sec.id+'" data-label="'+esc(label)+'">' +
           '<div class="section__head"><h2 class="section__title"><span>'+esc(sec.name)+'</span><span class="scr">'+esc(sec.accent)+'</span></h2></div>' +
-          '<div class="promo__card"><div class="promo__big">2 × 1</div>' +
-          '<p class="promo__when">Lunes y martes · 6:00 – 9:00 p.m.</p>' +
-          '<p class="promo__sub">En todos los tragos de promoción.</p>' +
+          '<div class="promo__card"><div class="promo__big">'+esc(sec.promoTitle)+'</div>' +
+          '<p class="promo__when">'+esc(sec.promoWhen)+'</p>' +
+          '<p class="promo__sub">'+esc(sec.promoSub)+'</p>' +
           '<ul class="promo__list">' +
-          '<li><span>Aperol Spritz</span><span class="dots"></span><span>2 × S/ 40.00</span></li>' +
-          '<li><span>Chilcano Macerado</span><span class="dots"></span><span>2 × S/ 30.00</span></li>' +
+          sec.promoItems.map(function (p) { return '<li><span>'+esc(p[0])+'</span><span class="dots"></span><span>'+esc(p[1])+'</span></li>'; }).join("") +
           '</ul></div></section>';
         return;
       }

@@ -24,11 +24,20 @@ GitHub → repo → **Settings → Webhooks → Add webhook**
 
 Después de eso, cada `git push` a `main` se publica solo.
 
-## Editar la carta
+## Editar la carta (precios, nombres, platos)
 
-Los platos y precios están en el array `MENU` dentro de `<script>` en `index.html`.
-Cada plato es `["Nombre", precio]` (precio en soles); el tercer valor opcional es
-la descripción. Guarda, haz commit y push.
+Todo está en `index.html`, en el array **`MENU`** dentro de `<script>`
+(busca el comentario `AQUÍ SE CAMBIAN PRECIOS`). Cada plato es **una línea**:
+
+    ["Ala", 14],                       ->  ["Ala", 15],      (cambiar precio)
+    ["Salchipapa Royal", 16, "Jamón, queso y huevo."]        (con descripción)
+
+- El precio es el número, sin comillas.
+- No borres las comillas `" "`, las comas `,` ni los corchetes `[ ]`.
+- Quitar un plato = borrar su línea. Agregar = copiar una línea y cambiarla.
+- El Happy Hour se edita en el bloque `promoItems` (mismo formato).
+
+Guarda → commit → push. Con el webhook, la web se actualiza sola.
 
 ## Negocio
 
