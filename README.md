@@ -10,7 +10,7 @@ hPanel → **Avanzado → GIT → Crear un nuevo repositorio**:
 
 | Campo | Valor |
 |---|---|
-| Repositorio | `https://github.com/surtiplast/coctels-piqueos-bar.git` |
+| Repositorio | `https://github.com/rolandoblas/coctels-piqueos-bar.git` |
 | Rama | `main` |
 | Directorio | `public_html` |
 
