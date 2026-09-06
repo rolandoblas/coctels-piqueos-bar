@@ -296,7 +296,7 @@
 
 <header class="header" id="top">
   <div class="header__bar">
-    <a class="logo" href="#top" aria-label="Coctel's Piqueos &amp; Bar — inicio">
+    <a class="logo" href="./" aria-label="Coctel's Piqueos &amp; Bar — inicio">
       <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M13 13 H51 M16 13 L32 35 L48 13 M32 35 V51 M22 51 H42"/></svg>
       <span class="logo__txt">Coctel<i>&#39;</i>s<small>Piqueos &amp; Bar</small></span>
     </a>
@@ -1048,6 +1048,11 @@
     totop.addEventListener("click", function () { window.scrollTo({ top:0, behavior:"smooth" }); });
     window.addEventListener("scroll", function () { totop.classList.toggle("show", window.scrollY > 480); }, { passive:true });
     totop.classList.toggle("show", window.scrollY > 480);
+
+    /* logo / "Inicio" -> recargar al inicio (estado limpio) */
+    function goHome(e) { if (e) e.preventDefault(); window.location.assign(window.location.pathname); }
+    var logoLink = $(".logo"); if (logoLink) logoLink.addEventListener("click", goHome);
+    var crumbHome = document.querySelector('.crumbs a[href="#top"]'); if (crumbHome) crumbHome.addEventListener("click", goHome);
 
     updateBadges(); updateFab();
   })();
